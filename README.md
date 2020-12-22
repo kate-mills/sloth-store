@@ -1,6 +1,6 @@
 ## Notes
 
-#### Older React Version
+#### Older React Version - Development - Hot reloading
 
 ```
 "react": "^16.13.1",
@@ -8,7 +8,7 @@
 "react-scripts": "3.4.3",
 ```
 
-#### Current React Version
+#### Current React Version - Production
 
 ```
 "react": "^17.0.1",
