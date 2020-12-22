@@ -1,10 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageHero } from '../components'
-import aboutImg from '../assets/hero-bcg.jpeg'
+import aboutImg from '../assets/fashion.jpg'
 
 const AboutPage = () => {
-  return <h4>about page</h4>
+  return (
+    <main>
+      <PageHero title="about"/>
+      <Wrapper className="page section section-center">
+        <img src={aboutImg} alt="Right profile of woman wearing Hide and Wild earrings. She has her eyes closed and head tilted back."/>
+        <article>
+          <div className="title">
+            <h2>About Hilary's Designs</h2>
+            <div className="underline"></div>
+          </div>
+          <p>Hand cut designs made with love and natural elements by yours truly, in the beautiful Napa Valley. *coming soon* hideandwild.com</p>
+        </article>
+
+      </Wrapper>
+    </main>
+  )
 }
 
 const Wrapper = styled.section`
