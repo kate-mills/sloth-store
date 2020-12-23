@@ -1,8 +1,34 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom';
 import styled from 'styled-components'
 
 const Contact = () => {
-  return <h4>contact section</h4>
+
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <h3>Hilary wants to hear from you!</h3>
+        <div className="content">
+          <p>Please fill out our form and Hilary will get back to you as soon as she can. Thank you!</p>
+          <form
+            className="contact-form"
+              method="post"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+              name="contact"
+              action="/success"
+            >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" className="form-input" placeholder="Your Name" required/>
+            <input type="email" className="form-input" placeholder="Your Email" required/>
+            <input type="tel" className="form-input" placeholder="Your Phone" />
+            <button type="submit" className="submit-btn">send</button>
+          </form>
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 const Wrapper = styled.section`
   padding: 5rem 0;
@@ -16,9 +42,10 @@ const Wrapper = styled.section`
   }
   .contact-form {
     width: 90vw;
+    margin: 0 auto;
     max-width: 500px;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto;
   }
 
   .form-input,
@@ -28,18 +55,19 @@ const Wrapper = styled.section`
     border: 2px solid var(--clr-black);
   }
   .form-input {
-    border-right: none;
     color: var(--clr-grey-3);
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
+    display: block;
+    margin-bottom: 10px;
   }
   .submit-btn {
     border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
+    margin-top: 10px;
   }
   .form-input::placeholder {
     color: var(--clr-black);
-    text-transform: capitalize;
   }
   .submit-btn {
     background: var(--clr-primary-5);
@@ -69,4 +97,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default Contact
+export default withRouter(Contact);
