@@ -7,6 +7,7 @@ import { links } from '../utils/constants'
 import CartButtons from './CartButtons'
 import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
+import { GiPrayerBeads } from 'react-icons/gi'
 
 const Nav = () => {
   const {openSidebar} = useProductsContext()
@@ -14,7 +15,7 @@ const Nav = () => {
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <Link to="/"><img src={logo} alt="Hide & Wild Logo"/></Link>
+          <Link to="/"><img src={logo} alt="Hide & Wild Logo"/><GiPrayerBeads className="necklace"/></Link>
           <button type='button' className="nav-toggle"
             onClick={openSidebar}
           >
@@ -54,6 +55,14 @@ const NavContainer = styled.nav`
     img {
       width: 175px;
       margin-left: -15px;
+    }
+    .necklace{
+      height: 50px;
+      background: transparent;
+      position: relative;
+      right: 25px;
+      stroke: hsl(22, 31%, 60%);
+      stroke-width: 13px;
     }
   }
   .nav-toggle {
